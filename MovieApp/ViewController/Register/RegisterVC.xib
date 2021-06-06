@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterVC" customModule="MovieApp" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionSignUp" destination="zoh-TJ-013" id="WPK-2E-TEy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewLoading" destination="bh1-QA-Rzg" id="tNn-it-ylm"/>
+                <outlet property="viewParentLoading" destination="r91-05-zPv" id="3Ti-53-cQB"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="257-fS-vBO">
+                    <rect key="frame" x="10" y="44" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Dai-WW-9TL"/>
+                        <constraint firstAttribute="width" constant="50" id="sSW-zV-WLd"/>
+                    </constraints>
+                    <state key="normal" image="ic-back"/>
+                    <connections>
+                        <action selector="back:" destination="-1" eventType="touchUpInside" id="JJv-j7-vdD"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlj-gx-bmt">
+                    <rect key="frame" x="60" y="44" width="334" height="50"/>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="22"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="zoh-TJ-013">
+                    <rect key="frame" x="0.0" y="114" width="414" height="782"/>
+                    <color key="backgroundColor" red="0.14509806040000001" green="0.15294116739999999" blue="0.1647058874" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KOR-sH-eBC">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r91-05-zPv">
+                    <rect key="frame" x="87" y="389" width="240" height="128"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bh1-QA-Rzg" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                            <rect key="frame" x="77" y="10" width="86.5" height="86.5"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="bh1-QA-Rzg" secondAttribute="height" multiplier="1:1" id="lkV-fB-j5D"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please waitting..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWO-oe-vxh">
+                            <rect key="frame" x="0.0" y="106.5" width="240" height="21.5"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="cWO-oe-vxh" firstAttribute="top" secondItem="bh1-QA-Rzg" secondAttribute="bottom" constant="10" id="5X0-T0-i1I"/>
+                        <constraint firstItem="cWO-oe-vxh" firstAttribute="leading" secondItem="r91-05-zPv" secondAttribute="leading" id="LFE-ZC-G8F"/>
+                        <constraint firstItem="bh1-QA-Rzg" firstAttribute="top" secondItem="r91-05-zPv" secondAttribute="top" constant="10" id="Lqc-NF-Cut"/>
+                        <constraint firstAttribute="bottom" secondItem="cWO-oe-vxh" secondAttribute="bottom" id="QyO-GN-apG"/>
+                        <constraint firstAttribute="trailing" secondItem="cWO-oe-vxh" secondAttribute="trailing" id="aeh-kH-cQg"/>
+                        <constraint firstItem="bh1-QA-Rzg" firstAttribute="centerX" secondItem="r91-05-zPv" secondAttribute="centerX" id="eHV-Gr-S5l"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.12549020350000001" green="0.1294117719" blue="0.13725490870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zoh-TJ-013" secondAttribute="trailing" id="Abc-i2-AjI"/>
+                <constraint firstItem="Mlj-gx-bmt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="HnE-cz-Fe9"/>
+                <constraint firstAttribute="bottom" secondItem="zoh-TJ-013" secondAttribute="bottom" id="M5E-19-BcQ"/>
+                <constraint firstItem="Mlj-gx-bmt" firstAttribute="height" secondItem="257-fS-vBO" secondAttribute="height" id="QHa-q4-EPN"/>
+                <constraint firstItem="257-fS-vBO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Qm2-5o-ufF"/>
+                <constraint firstItem="r91-05-zPv" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="RKI-L5-518"/>
+                <constraint firstItem="zoh-TJ-013" firstAttribute="top" secondItem="257-fS-vBO" secondAttribute="bottom" constant="20" id="X8X-Px-LX1"/>
+                <constraint firstItem="Mlj-gx-bmt" firstAttribute="leading" secondItem="257-fS-vBO" secondAttribute="trailing" id="YfT-T9-vBH"/>
+                <constraint firstItem="257-fS-vBO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bxm-Wq-gcB"/>
+                <constraint firstItem="r91-05-zPv" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.57971" id="ifo-lU-SgS"/>
+                <constraint firstItem="r91-05-zPv" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="jgA-CN-QwI"/>
+                <constraint firstItem="r91-05-zPv" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.142857" id="oVf-bJ-oWY"/>
+                <constraint firstItem="zoh-TJ-013" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pcM-dx-cyy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Mlj-gx-bmt" secondAttribute="trailing" constant="20" id="tki-8Z-Xxk"/>
+            </constraints>
+            <point key="canvasLocation" x="132" y="63"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic-back" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

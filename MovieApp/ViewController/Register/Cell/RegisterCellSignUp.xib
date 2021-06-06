@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="RegisterCellSignUp" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="449" height="171"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="449" height="171"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or continue with" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4r-ZK-775">
+                        <rect key="frame" x="20" y="10" width="419" height="19.5"/>
+                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iL-Lq-rJW">
+                        <rect key="frame" x="20" y="39.5" width="67.5" height="67.5"/>
+                        <color key="backgroundColor" red="0.1764705926" green="0.1843137443" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="6iL-Lq-rJW" secondAttribute="height" multiplier="1:1" id="JZV-A3-DVy"/>
+                        </constraints>
+                        <state key="normal" image="ic-google"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2V7-rI-VPl">
+                        <rect key="frame" x="97.5" y="39.5" width="67" height="67.5"/>
+                        <color key="backgroundColor" red="0.1764705926" green="0.1843137443" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <state key="normal" image="ic-facebook"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDP-eh-zCz">
+                        <rect key="frame" x="20" y="106" width="409" height="55"/>
+                        <color key="backgroundColor" red="1" green="0.81960785390000002" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="yDP-eh-zCz" secondAttribute="height" multiplier="335:45" id="1ht-py-CfN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                        <state key="normal" title="Sign Up">
+                            <color key="titleColor" red="0.12549020350000001" green="0.1294117719" blue="0.13725490870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                        <connections>
+                            <action selector="signUp:" destination="gTV-IL-0wX" eventType="touchUpInside" id="CO6-Ac-MhA"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="yDP-eh-zCz" secondAttribute="trailing" constant="20" id="7mz-wQ-hWY"/>
+                <constraint firstAttribute="bottom" secondItem="yDP-eh-zCz" secondAttribute="bottom" constant="10" id="BnP-VV-OkI"/>
+                <constraint firstItem="6iL-Lq-rJW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="HEt-Gw-tGz"/>
+                <constraint firstItem="i4r-ZK-775" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="OIv-uI-3dv"/>
+                <constraint firstAttribute="trailing" secondItem="i4r-ZK-775" secondAttribute="trailing" constant="10" id="ON6-dp-iaT"/>
+                <constraint firstItem="2V7-rI-VPl" firstAttribute="leading" secondItem="6iL-Lq-rJW" secondAttribute="trailing" constant="10" id="Pcf-1Y-04j"/>
+                <constraint firstItem="2V7-rI-VPl" firstAttribute="height" secondItem="6iL-Lq-rJW" secondAttribute="height" id="Qws-H1-At8"/>
+                <constraint firstItem="2V7-rI-VPl" firstAttribute="top" secondItem="i4r-ZK-775" secondAttribute="bottom" constant="10" id="asK-Vq-skl"/>
+                <constraint firstItem="6iL-Lq-rJW" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.15" id="bia-wG-CMy"/>
+                <constraint firstItem="yDP-eh-zCz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="fYT-XC-fdi"/>
+                <constraint firstItem="i4r-ZK-775" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="hCt-mp-wtl"/>
+                <constraint firstItem="6iL-Lq-rJW" firstAttribute="top" secondItem="i4r-ZK-775" secondAttribute="bottom" constant="10" id="tAw-1L-vHY"/>
+                <constraint firstItem="2V7-rI-VPl" firstAttribute="width" secondItem="6iL-Lq-rJW" secondAttribute="width" id="xq8-fH-K8q"/>
+            </constraints>
+            <size key="customSize" width="449" height="171"/>
+            <connections>
+                <outlet property="btnFacebook" destination="2V7-rI-VPl" id="N58-Do-GZX"/>
+                <outlet property="btnGoogle" destination="6iL-Lq-rJW" id="9Vm-bh-7dp"/>
+                <outlet property="btnSignUp" destination="yDP-eh-zCz" id="aqs-D2-pTq"/>
+            </connections>
+            <point key="canvasLocation" x="96.376811594202906" y="70.647321428571431"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic-facebook" width="12.5" height="24"/>
+        <image name="ic-google" width="20" height="20"/>
+    </resources>
+</document>

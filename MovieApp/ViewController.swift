@@ -6,14 +6,20 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        perform(#selector(openVC), with: self, afterDelay: 0)
     }
-
-
+    
+    @objc func openVC() {
+        let vc = LoginVC()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
+    }
 }
 
