@@ -123,6 +123,9 @@ PODS:
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
   - PromisesObjC (1.2.12)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
 
 DEPENDENCIES:
   - FBSDKLoginKit
@@ -130,6 +133,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - GoogleSignIn
   - NVActivityIndicatorView
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
@@ -151,6 +155,7 @@ SPEC REPOS:
     - nanopb
     - NVActivityIndicatorView
     - PromisesObjC
+    - SDWebImage
 
 SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
@@ -171,7 +176,8 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
-PODFILE CHECKSUM: 8031f7a7826a3fa4a8dc1d2ca28421931f8f2e2c
+PODFILE CHECKSUM: 07258c5fa4860610496b743fded4c29e3bfa77dc
 
 COCOAPODS: 1.10.1

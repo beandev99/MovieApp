@@ -9,6 +9,8 @@ import UIKit
 import FirebaseAuth
 import GoogleSignIn
 import NVActivityIndicatorView
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class LoginVC: UIViewController {
     @IBOutlet weak var tftEmail: UITextField!
@@ -28,7 +30,6 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupKeyboard()
-
     }
     
     func setupUI() {
@@ -92,15 +93,38 @@ class LoginVC: UIViewController {
     }
     @IBAction func forgotPassword(_ sender: Any) {
     }
+    
     @IBAction func googleLogin(_ sender: Any) {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
     }
+    
     @IBAction func facebookLogin(_ sender: Any) {
+        let loginManager = LoginManager()
+        loginManager.logIn(permissions: ["public_profile", "email"], from: self) { result, error in
+            if let error = error {
+                print("failed to login fb")
+                return
+            }
+            guard let accessToken = AccessToken.current else {
+                print("get tokkent failed")
+                return
+            }
+            let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+            Auth.auth().signIn(with: credential) { user, error in
+                if let error = error {
+                    print("login error: \(error.localizedDescription)")
+                }
+                else {
+                    print("login success")
+                }
+            }
+        }
     }
     
     @IBAction func login(_ sender: Any) {
         if validateData() {
+            view.endEditing(true)
             viewParentLoading.isHidden = false
             viewLoading.startAnimating()
             viewLoading.type = .ballRotateChase
@@ -120,7 +144,6 @@ class LoginVC: UIViewController {
                     }))
                     present(alert, animated: true, completion: nil)
                 }
-
             }
         }
     }

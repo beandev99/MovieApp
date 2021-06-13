@@ -33,13 +33,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             UIApplication.getTopViewController()?.present(alert, animated: true, completion: nil)
         }
     }
-    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FirebaseApp.configure()
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
+//        FirebaseApp.configure()
+//        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+//        GIDSignIn.sharedInstance().delegate = self
+    
         return true
     }
 

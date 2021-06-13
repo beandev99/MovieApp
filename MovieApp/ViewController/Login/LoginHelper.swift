@@ -6,16 +6,16 @@
 //
 
 import Foundation
-import FirebaseAuth
+//import FirebaseAuth
 
 class LoginHelper {
     func login(email: String, password: String, completion: @escaping (_ isSuccess: Bool)->Void) {
-        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            if error == nil {
-                completion(true)
-                return
-            }
-            completion(false)
-        }
+//        FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password) { result, error in
+//            if error == nil {
+//                completion(true)
+//                return
+//            }
+//            completion(false)
+//        }
     }
 }

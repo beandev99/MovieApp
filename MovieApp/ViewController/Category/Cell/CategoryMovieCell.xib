@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+        <array key="SF-Pro-Display-Semibold.otf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoryMovieCell" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="316" height="484"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="316" height="484"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILd-LO-sTd">
+                        <rect key="frame" x="0.0" y="411.5" width="316" height="72.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name movie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tew-yD-eYF">
+                                <rect key="frame" x="0.0" y="0.0" width="316" height="36"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5v-jf-ea4">
+                                <rect key="frame" x="0.0" y="36" width="316" height="36.5"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                                <color key="textColor" red="0.65882354970000001" green="0.66274511810000003" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="f5v-jf-ea4" secondAttribute="bottom" id="4GI-h4-tq1"/>
+                            <constraint firstItem="f5v-jf-ea4" firstAttribute="top" secondItem="tew-yD-eYF" secondAttribute="bottom" id="I6V-59-kxw"/>
+                            <constraint firstItem="tew-yD-eYF" firstAttribute="leading" secondItem="ILd-LO-sTd" secondAttribute="leading" id="Qfm-iL-vdz"/>
+                            <constraint firstItem="tew-yD-eYF" firstAttribute="top" secondItem="ILd-LO-sTd" secondAttribute="top" id="VCg-JA-6P9"/>
+                            <constraint firstItem="tew-yD-eYF" firstAttribute="height" secondItem="ILd-LO-sTd" secondAttribute="height" multiplier="1/2" id="dy3-8k-Cy6"/>
+                            <constraint firstAttribute="trailing" secondItem="f5v-jf-ea4" secondAttribute="trailing" id="f7p-uX-Q5g"/>
+                            <constraint firstItem="f5v-jf-ea4" firstAttribute="leading" secondItem="ILd-LO-sTd" secondAttribute="leading" id="nHS-Gw-QyY"/>
+                            <constraint firstAttribute="trailing" secondItem="tew-yD-eYF" secondAttribute="trailing" id="oNs-jP-NYx"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-demo" translatesAutoresizingMaskIntoConstraints="NO" id="IkN-L0-tSc">
+                        <rect key="frame" x="0.0" y="0.0" width="316" height="401.5"/>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-quality" translatesAutoresizingMaskIntoConstraints="NO" id="NHC-rM-JwO">
+                        <rect key="frame" x="10" y="363" width="41" height="28.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="NHC-rM-JwO" secondAttribute="height" multiplier="23:16" id="cNI-8s-9QN"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ILd-LO-sTd" firstAttribute="top" secondItem="NHC-rM-JwO" secondAttribute="bottom" constant="20" id="3EW-Fr-OlI"/>
+                <constraint firstItem="ILd-LO-sTd" firstAttribute="top" secondItem="IkN-L0-tSc" secondAttribute="bottom" constant="10" id="4iL-Nm-nbc"/>
+                <constraint firstItem="IkN-L0-tSc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="MwM-we-8r0"/>
+                <constraint firstItem="ILd-LO-sTd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QgL-yF-PHi"/>
+                <constraint firstItem="IkN-L0-tSc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="RoA-fN-1L1"/>
+                <constraint firstAttribute="trailing" secondItem="ILd-LO-sTd" secondAttribute="trailing" id="Wta-H3-0wr"/>
+                <constraint firstItem="NHC-rM-JwO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Y2Y-Uy-UQ3"/>
+                <constraint firstItem="NHC-rM-JwO" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.13" id="br4-f5-Wwf"/>
+                <constraint firstAttribute="bottom" secondItem="ILd-LO-sTd" secondAttribute="bottom" id="p5n-Yd-mws"/>
+                <constraint firstItem="ILd-LO-sTd" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.15" id="w5Q-PZ-Dky"/>
+                <constraint firstAttribute="trailing" secondItem="IkN-L0-tSc" secondAttribute="trailing" id="whN-YX-q2r"/>
+            </constraints>
+            <size key="customSize" width="316" height="484"/>
+            <connections>
+                <outlet property="imgMovie" destination="IkN-L0-tSc" id="dXv-Sa-qfh"/>
+                <outlet property="lblDesc" destination="f5v-jf-ea4" id="6CL-kh-oXA"/>
+                <outlet property="lblName" destination="tew-yD-eYF" id="irO-QG-pHk"/>
+            </connections>
+            <point key="canvasLocation" x="-288.40579710144931" y="104.46428571428571"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic-quality" width="23" height="16"/>
+        <image name="img-demo" width="335" height="188.5"/>
+    </resources>
+</document>

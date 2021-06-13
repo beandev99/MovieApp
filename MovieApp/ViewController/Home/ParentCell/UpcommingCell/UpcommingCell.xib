@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="UpcommingCell" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="462" height="283"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="462" height="283"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upcomming Movie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9CP-Yi-lcA">
+                        <rect key="frame" x="0.0" y="0.0" width="187" height="29"/>
+                        <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="22"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Tee-aG-9Rx">
+                        <rect key="frame" x="0.0" y="39" width="462" height="244"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9g1-G4-eY5">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xot-Lm-zkh">
+                        <rect key="frame" x="197" y="0.0" width="245" height="29"/>
+                        <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="14"/>
+                        <state key="normal" title="More">
+                            <color key="titleColor" red="1" green="0.81960785390000002" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                        <connections>
+                            <action selector="more:" destination="gTV-IL-0wX" eventType="touchUpInside" id="nk2-I9-i3j"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Xot-Lm-zkh" firstAttribute="leading" secondItem="9CP-Yi-lcA" secondAttribute="trailing" constant="10" id="5hD-ox-vOg"/>
+                <constraint firstAttribute="bottom" secondItem="Tee-aG-9Rx" secondAttribute="bottom" id="6Z9-HK-KkU"/>
+                <constraint firstItem="9CP-Yi-lcA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PkH-Ip-2je"/>
+                <constraint firstItem="9CP-Yi-lcA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Tim-ac-wPs"/>
+                <constraint firstItem="Tee-aG-9Rx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UKK-5q-lM3"/>
+                <constraint firstItem="Xot-Lm-zkh" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Z2x-dj-VBg"/>
+                <constraint firstAttribute="trailing" secondItem="Xot-Lm-zkh" secondAttribute="trailing" constant="20" id="e2C-hm-pF1"/>
+                <constraint firstItem="Tee-aG-9Rx" firstAttribute="top" secondItem="Xot-Lm-zkh" secondAttribute="bottom" constant="10" id="gNR-iT-1sc"/>
+                <constraint firstAttribute="trailing" secondItem="Tee-aG-9Rx" secondAttribute="trailing" id="nN9-WN-qft"/>
+                <constraint firstItem="Tee-aG-9Rx" firstAttribute="top" secondItem="9CP-Yi-lcA" secondAttribute="bottom" constant="10" id="uCA-7d-CNA"/>
+            </constraints>
+            <size key="customSize" width="462" height="283"/>
+            <connections>
+                <outlet property="collectionUpcomming" destination="Tee-aG-9Rx" id="bYh-3H-QXH"/>
+            </connections>
+            <point key="canvasLocation" x="203" y="116"/>
+        </collectionViewCell>
+    </objects>
+</document>

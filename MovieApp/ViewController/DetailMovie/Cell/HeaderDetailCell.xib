@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gTV-IL-0wX" customClass="HeaderDetailCell" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="271" height="302"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="271" height="302"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vdh-bD-99E">
+                        <rect key="frame" x="0.0" y="0.0" width="271" height="302"/>
+                    </imageView>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQe-in-i5c">
+                        <rect key="frame" x="81.5" y="97" width="108" height="108"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="OQe-in-i5c" secondAttribute="height" multiplier="1:1" id="cgy-If-OJ1"/>
+                        </constraints>
+                        <state key="normal" image="ic-play"/>
+                        <connections>
+                            <action selector="play:" destination="gTV-IL-0wX" eventType="touchUpInside" id="tu9-vV-s4V"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FlJ-sS-3HL" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                        <rect key="frame" x="108.5" y="124" width="54" height="54"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Vdh-bD-99E" secondAttribute="bottom" id="9M4-1f-5y8"/>
+                <constraint firstItem="FlJ-sS-3HL" firstAttribute="width" secondItem="OQe-in-i5c" secondAttribute="width" multiplier="0.5" id="BO5-cx-kle"/>
+                <constraint firstItem="FlJ-sS-3HL" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="GZ2-DY-3ON"/>
+                <constraint firstItem="OQe-in-i5c" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="HiQ-qc-MfX"/>
+                <constraint firstItem="Vdh-bD-99E" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LCn-aV-P41"/>
+                <constraint firstItem="FlJ-sS-3HL" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Q5r-w8-FYT"/>
+                <constraint firstItem="OQe-in-i5c" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Uar-qh-Lzf"/>
+                <constraint firstItem="FlJ-sS-3HL" firstAttribute="height" secondItem="OQe-in-i5c" secondAttribute="height" multiplier="0.5" id="bRI-FB-SF5"/>
+                <constraint firstItem="Vdh-bD-99E" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cYJ-RL-w95"/>
+                <constraint firstAttribute="trailing" secondItem="Vdh-bD-99E" secondAttribute="trailing" id="fDv-rq-fRa"/>
+                <constraint firstItem="OQe-in-i5c" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.4" id="zv8-E8-b4E"/>
+            </constraints>
+            <size key="customSize" width="271" height="302"/>
+            <connections>
+                <outlet property="btnPlay" destination="OQe-in-i5c" id="aGm-RU-7yu"/>
+                <outlet property="imgPreview" destination="Vdh-bD-99E" id="kHo-ZV-0HM"/>
+                <outlet property="viewLoading" destination="FlJ-sS-3HL" id="QCz-al-dNY"/>
+            </connections>
+            <point key="canvasLocation" x="181.8840579710145" y="172.09821428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic-play" width="56" height="56"/>
+    </resources>
+</document>

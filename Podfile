@@ -11,6 +11,7 @@ target 'MovieApp' do
   pod 'FBSDKLoginKit'
   pod 'GoogleSignIn'
   pod 'NVActivityIndicatorView'
+  pod 'SDWebImage'
 
 
 
