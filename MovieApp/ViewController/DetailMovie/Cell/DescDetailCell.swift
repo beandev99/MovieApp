@@ -10,8 +10,7 @@ import UIKit
 class DescDetailCell: UICollectionViewCell {
 
     @IBOutlet weak var lblOverview: UILabel!
-    @IBOutlet weak var viewTrailer: UIView!
-    @IBOutlet weak var collectionRelated: UICollectionView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()

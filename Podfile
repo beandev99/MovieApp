@@ -12,6 +12,7 @@ target 'MovieApp' do
   pod 'GoogleSignIn'
   pod 'NVActivityIndicatorView'
   pod 'SDWebImage'
+  pod 'youtube-ios-player-helper'
 
 
 

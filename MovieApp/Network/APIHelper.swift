@@ -13,13 +13,91 @@ protocol APIHelper {
     func getDataMovie(type: TypeCategory, page: Int?, completed: @escaping (_ isSuccess: Bool, _ dataMovie: MovieModel?, _ error: Error?)->Void)
     func getImage(pathImg: String, width: WidthImage, completed: @escaping (_ isSuccess: Bool, _ image: UIImage?)->Void)
     func getURLTrailerMovie(idMovie: Int, completed: @escaping (_ isSuccess: Bool, _ dataTrailer: TrailerModel?, _ error: Error?)->Void)
+    func getRecommendMovie(idMovie: Int, pageLoading: inout Int?, completed: @escaping (_ isSuccess: Bool, _ dataMovie: MovieModel?)->Void)
+    func getLinkMovie(idMovie: Int, completed: @escaping (_ isSuccess: Bool, _ data: LinkMovie?)->Void)
+    func getActorMovie(idMovie: Int, completed: @escaping (_ isSuccess: Bool, _ data: ActorMovie?)->Void)
 }
 
 class APIHelperImp: APIHelper {
+    func getActorMovie(idMovie: Int, completed: @escaping (Bool, ActorMovie?) -> Void) {
+        let url = URL(string: "https://api.themoviedb.org/3/movie/\(idMovie)/credits?api_key=\(API_KEY)&language=en-US")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        request.timeoutInterval = 120
+        URLSession.shared.dataTask(with: request) { data, response, err in
+            if err == nil {
+                if let data = data {
+                    do {
+                        let dataActor = try JSONDecoder().decode(ActorMovie.self, from: data)
+                        completed(true, dataActor)
+                    } catch {
+                        completed(false,nil)
+                    }
+                }
+            }
+            else {
+                completed(false,nil)
+            }
+        }.resume()
+    }
+    
+    func getLinkMovie(idMovie: Int, completed: @escaping (Bool, LinkMovie?) -> Void) {
+        let url = URL(string: DEFAULT_URL_LINK_MOVIE+"\(idMovie)")
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        request.timeoutInterval = 120
+        URLSession.shared.dataTask(with: request) { data , response, err in
+            if err == nil {
+                if let data = data {
+                    do {
+                        let dataLink = try JSONDecoder().decode(LinkMovie.self, from: data)
+                        completed(true,dataLink)
+                    } catch {
+                        completed(false,nil)
+                    }
+                }
+                else {
+                    completed(false,nil)
+                }
+            }
+            else {
+                completed(false,nil)
+            }
+        }.resume()
+    }
+
+    func getRecommendMovie(idMovie: Int, pageLoading: inout Int?, completed: @escaping (Bool, MovieModel?) -> Void) {
+        if pageLoading == nil {
+            pageLoading = 1
+        }
+        let url = URL(string: "https://api.themoviedb.org/3/movie/\(idMovie)/recommendations?api_key=\(API_KEY)&language=en-US&page=\(pageLoading!)")
+        runOnBackgroundThread {
+            var request = URLRequest(url: url!)
+            request.httpMethod = "GET"
+            request.timeoutInterval = 120
+            URLSession.shared.dataTask(with: request) { data, respone, error in
+                if error == nil {
+                    if let data = data {
+                        do {
+                            let dataRecomend = try JSONDecoder().decode(MovieModel.self, from: data)
+                            completed(true, dataRecomend)
+                        } catch {
+                            completed(false, nil)
+                        }
+                    }
+                    else {
+                        completed(false, nil)
+                    }
+                }
+                else {
+                    completed(false,nil)
+                }
+            }.resume()
+        }
+    }
     
     func getURLTrailerMovie(idMovie: Int, completed: @escaping (Bool, TrailerModel?, Error?) -> Void) {
         let url = URL(string: "https://api.themoviedb.org/3/movie/\(idMovie)/videos?api_key=\(API_KEY)&language=en-US")
-        print("🌲 id movie: \(url?.absoluteString)")
         runOnBackgroundThread {
             var request = URLRequest(url: url!)
             request.httpMethod = "GET"
@@ -28,12 +106,7 @@ class APIHelperImp: APIHelper {
                 if error == nil {
                     if let data = data {
                         do {
-                            var dataMovie = try JSONDecoder().decode(TrailerModel.self, from: data)
-                            if !(dataMovie.results.isEmpty) {
-                                let path = dataMovie.results[0].key
-                                dataMovie.urlYoutube = "https://www.youtube.com/watch?v=\(path)"
-
-                            }
+                            let dataMovie = try JSONDecoder().decode(TrailerModel.self, from: data)
                             completed(true, dataMovie, nil)
                             return
                         } catch let error {

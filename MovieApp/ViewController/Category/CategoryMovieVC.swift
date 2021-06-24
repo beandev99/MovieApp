@@ -78,6 +78,16 @@ extension CategoryMovieVC: UICollectionViewDelegate, UICollectionViewDataSource,
         return 0
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let dataMovie = dataMovie {
+            let vc = DetailMovieVC()
+            vc.dataMovie = dataMovie.results[indexPath.row]
+            vc.modalTransitionStyle = .coverVertical
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        }
+    }
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let height = collectionViewCategory.frame.size.height
         let contentYoffset = collectionViewCategory.contentOffset.y

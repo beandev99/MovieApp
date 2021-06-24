@@ -214,7 +214,12 @@ extension HomeVC {
 extension HomeVC: MoreDelegate {
     
     func indexSelect(movie: Result) {
-        delegate?.movieDetail(movie: movie)
+//        delegate?.movieDetail(movie: movie)
+        let vc = DetailMovieVC()
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .fullScreen
+        vc.dataMovie = movie
+        present(vc, animated: true, completion: nil)
     }
     
     func more(index: Int) {
