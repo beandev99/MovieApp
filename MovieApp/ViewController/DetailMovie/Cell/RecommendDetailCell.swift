@@ -40,12 +40,9 @@ extension RecommendDetailCell: UICollectionViewDelegate, UICollectionViewDataSou
         if let dataMovie = dataMovie {
             cell?.lblNameMovie.text = dataMovie.results[indexPath.row].name ?? dataMovie.results[indexPath.row].title
             if let backdropPath = dataMovie.results[indexPath.row].backdropPath {
-                apiHelper.getImage(pathImg: backdropPath, width: .w_400) { isSuccess , image in
-                    if isSuccess {
-                        cell?.imgMovie.image = image
-                        cell?.imgMovie.layer.cornerRadius = 10
-                    }
-                }
+                let width = WidthImage.original
+                let url = URL(string: DEFAULT_URL_IMG+width.rawValue+"/\(backdropPath)")
+                cell?.imgMovie.sd_setImage(with: url, completed: nil)
             }
         }
         return cell!

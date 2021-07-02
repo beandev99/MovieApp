@@ -12,6 +12,8 @@
 		D70056C026726A5900B886C4 /* CategoryMovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70056BE26726A5900B886C4 /* CategoryMovieCell.xib */; };
 		D71B85FE267120B900CD4634 /* CategoryMovieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71B85FC267120B900CD4634 /* CategoryMovieVC.swift */; };
 		D71B85FF267120B900CD4634 /* CategoryMovieVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D71B85FD267120B900CD4634 /* CategoryMovieVC.xib */; };
+		D735DECA268F686700FF5C6D /* DetailActorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D735DEC8268F686700FF5C6D /* DetailActorVC.swift */; };
+		D735DECB268F686700FF5C6D /* DetailActorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D735DEC9268F686700FF5C6D /* DetailActorVC.xib */; };
 		D73AE20F2673D09A00C6BDB2 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AE20E2673D09A00C6BDB2 /* Enum.swift */; };
 		D73AE21326745A9100C6BDB2 /* DetailMovieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AE21126745A9100C6BDB2 /* DetailMovieVC.swift */; };
 		D73AE21426745A9100C6BDB2 /* DetailMovieVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D73AE21226745A9100C6BDB2 /* DetailMovieVC.xib */; };
@@ -118,6 +120,8 @@
 		D70056BE26726A5900B886C4 /* CategoryMovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryMovieCell.xib; sourceTree = "<group>"; };
 		D71B85FC267120B900CD4634 /* CategoryMovieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMovieVC.swift; sourceTree = "<group>"; };
 		D71B85FD267120B900CD4634 /* CategoryMovieVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryMovieVC.xib; sourceTree = "<group>"; };
+		D735DEC8268F686700FF5C6D /* DetailActorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailActorVC.swift; sourceTree = "<group>"; };
+		D735DEC9268F686700FF5C6D /* DetailActorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailActorVC.xib; sourceTree = "<group>"; };
 		D73AE20E2673D09A00C6BDB2 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		D73AE21126745A9100C6BDB2 /* DetailMovieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMovieVC.swift; sourceTree = "<group>"; };
 		D73AE21226745A9100C6BDB2 /* DetailMovieVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMovieVC.xib; sourceTree = "<group>"; };
@@ -259,6 +263,15 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		D735DEC7268F684A00FF5C6D /* DetailActor */ = {
+			isa = PBXGroup;
+			children = (
+				D735DEC8268F686700FF5C6D /* DetailActorVC.swift */,
+				D735DEC9268F686700FF5C6D /* DetailActorVC.xib */,
+			);
+			path = DetailActor;
+			sourceTree = "<group>";
+		};
 		D73AE21026745A7600C6BDB2 /* DetailMovie */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +400,7 @@
 		D78C5722266B947300FE5309 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D735DEC7268F684A00FF5C6D /* DetailActor */,
 				D73AE21026745A7600C6BDB2 /* DetailMovie */,
 				D71B85FB26711FD500CD4634 /* Category */,
 				D7A8E2F8266CD7BA00C72853 /* Setting */,
@@ -719,6 +733,7 @@
 				D7947B132677AA520042AB61 /* TrailerDetailCell.xib in Resources */,
 				D78AA86B266FB1910017D725 /* TrendingChildCell.xib in Resources */,
 				D7A8E2C9266C5FA100C72853 /* SF-Pro-Display-Black.otf in Resources */,
+				D735DECB268F686700FF5C6D /* DetailActorVC.xib in Resources */,
 				D78AA894266FC73F0017D725 /* NowPlayingChildCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -818,6 +833,7 @@
 				D7C4D124267DDF2E00BBA7ED /* RecomendDetailCell.swift in Sources */,
 				D7BE7F742675308E005F00F3 /* TrailerModel.swift in Sources */,
 				D78AA86A266FB1910017D725 /* TrendingChildCell.swift in Sources */,
+				D735DECA268F686700FF5C6D /* DetailActorVC.swift in Sources */,
 				D7A8E337266FA6AE00C72853 /* SearchVC.swift in Sources */,
 				D7A8E2EA266C853A00C72853 /* RegisterCellSignUp.swift in Sources */,
 				D73AE2242674874600C6BDB2 /* DescDetailCell.swift in Sources */,

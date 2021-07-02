@@ -75,14 +75,25 @@ class DetailMovieVC: UIViewController {
         }
         
         apiHelper.getLinkMovie(idMovie: (dataMovie?.id)!) { isSuccess, data in
-            runOnMainThread {
-                if isSuccess {
-                    self.dataLinkMovie = data
-                    self.collectionDetail.reloadData()
+            if isSuccess {
+                self.dataLinkMovie = data
+                if let urlSub = self.dataLinkMovie?.data.linkSub {
+                    self.apiHelper.downloadSub(url: urlSub) { isSuccess in
+                        if isSuccess {
+                            runOnMainThread {
+                                self.collectionDetail.reloadData()
+                            }
+                        }
+                    }
                 }
                 else {
-                    print("👻 ko get dc data")
+                    runOnMainThread {
+                        self.collectionDetail.reloadData()
+                    }
                 }
+            }
+            else {
+                print("👻 ko get dc data")
             }
         }
         getDataActor()
@@ -119,6 +130,7 @@ extension DetailMovieVC: UICollectionViewDelegate, UICollectionViewDataSource, U
                 if let dataLinkMovie = dataLinkMovie {
                     cell?.btnPlay.isHidden = false
                     cell?.urlMovie = dataLinkMovie.data.url
+                    cell?.subURL = dataLinkMovie.data.linkSub
                 }
                 else {
                     cell?.btnPlay.isHidden = true
@@ -132,7 +144,8 @@ extension DetailMovieVC: UICollectionViewDelegate, UICollectionViewDataSource, U
             if let year = dataMovie?.releaseDate?.split(separator: "-").first {
                 txtInfor.append("\(year) | ")
             }
-            cell?.lblInfor.text = "\(dataMovie?.releaseDate?.split(separator: "-").first) | \(dataMovie?.mediaType)"
+            let yearRelease = dataMovie?.releaseDate
+            cell?.lblInfor.text = yearRelease
             if let vote = dataMovie?.voteAverage {
                 cell?.lblRate.text = "\(vote)"
             }
@@ -248,7 +261,9 @@ extension DetailMovieVC {
         apiHelper.getActorMovie(idMovie: (dataMovie?.id)!) { isSuccess, data  in
             runOnMainThread {
                 self.dataActor = data
-                self.collectionDetail.reloadData()
+                let cell = self.collectionDetail.cellForItem(at: IndexPath(row: 0, section: 4)) as? ActorDetailCell
+                cell?.dataActor = data
+                cell?.collectionActor.reloadData()
             }
         }
     }

@@ -37,13 +37,10 @@ extension ActorDetailCell: UICollectionViewDelegate, UICollectionViewDataSource,
         if let dataActor = dataActor {
             cell?.lblNameActor.text = dataActor.cast[indexPath.row].name
             if let path = dataActor.cast[indexPath.row].profilePath {
-                apiHelper.getImage(pathImg: path, width: .w_400) { isSuccess, img in
-                    if isSuccess {
-                        cell?.imgActor.image = img
-                    }
-                }
+                let width = WidthImage.original
+                let url = URL(string: DEFAULT_URL_IMG+width.rawValue+"/\(path)")
+                cell?.imgActor.sd_setImage(with: url!, completed: nil)
             }
-  
         }
         return cell!
     }
@@ -54,5 +51,19 @@ extension ActorDetailCell: UICollectionViewDelegate, UICollectionViewDataSource,
         return CGSize(width: widthCell, height: heightCell)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
 }

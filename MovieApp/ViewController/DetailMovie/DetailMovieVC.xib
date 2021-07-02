@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19115.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,10 +20,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOJ-qR-QP5">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="125.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="107.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oT8-bB-FlS">
-                            <rect key="frame" x="10" y="54.5" width="41.5" height="41.5"/>
+                            <rect key="frame" x="10" y="44" width="41.5" height="41"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="oT8-bB-FlS" secondAttribute="height" multiplier="1:1" id="6KT-8X-EHg"/>
                             </constraints>
@@ -41,7 +41,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jR1-nh-MGF">
-                    <rect key="frame" x="0.0" y="125.5" width="414" height="770.5"/>
+                    <rect key="frame" x="0.0" y="107.5" width="414" height="788.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aWu-QJ-KVw">
                         <size key="itemSize" width="128" height="128"/>
@@ -58,7 +58,7 @@
                 <constraint firstItem="jR1-nh-MGF" firstAttribute="top" secondItem="FOJ-qR-QP5" secondAttribute="bottom" id="G50-CK-LX7"/>
                 <constraint firstItem="FOJ-qR-QP5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Yd0-1C-b4m"/>
                 <constraint firstItem="FOJ-qR-QP5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bnI-XW-lNT"/>
-                <constraint firstItem="FOJ-qR-QP5" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.14" id="eXy-Tm-20v"/>
+                <constraint firstItem="FOJ-qR-QP5" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.12" id="eXy-Tm-20v"/>
                 <constraint firstItem="jR1-nh-MGF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ft7-im-RKm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FOJ-qR-QP5" secondAttribute="trailing" id="pq9-BA-zL5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jR1-nh-MGF" secondAttribute="trailing" id="uNY-NU-7RL"/>

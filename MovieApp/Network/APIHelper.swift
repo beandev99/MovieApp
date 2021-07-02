@@ -16,9 +16,60 @@ protocol APIHelper {
     func getRecommendMovie(idMovie: Int, pageLoading: inout Int?, completed: @escaping (_ isSuccess: Bool, _ dataMovie: MovieModel?)->Void)
     func getLinkMovie(idMovie: Int, completed: @escaping (_ isSuccess: Bool, _ data: LinkMovie?)->Void)
     func getActorMovie(idMovie: Int, completed: @escaping (_ isSuccess: Bool, _ data: ActorMovie?)->Void)
+    func downloadSub(url: String, completed: @escaping (_ isSuccess: Bool)->Void)
 }
 
 class APIHelperImp: APIHelper {
+    
+    func downloadSub(url: String, completed: @escaping (Bool) -> Void) {
+        let url = URL(string: url)
+        var request = URLRequest(url: url!)
+        request.httpMethod = "GET"
+        request.timeoutInterval = 120
+        runOnBackgroundThread {
+            URLSession.shared.dataTask(with: request) { data, response , error in
+                if error == nil {
+                    if let data = data {
+                        let stringData = String(decoding: data, as: UTF8.self)
+                        var newStringData = stringData.components(separatedBy: "\n")
+                        var indexLineSub = 1
+                        for (index, value) in newStringData.enumerated() {
+                            if value == "" {
+                                newStringData[index] = "\(indexLineSub)"
+                                indexLineSub += 1
+                            }
+                        }
+                        var newString = ""
+                        newStringData.forEach { str in
+                            if Int(str) != nil {
+                                newString.append("\n")
+                            }
+                            newString.append(str)
+                            newString.append("\n")
+                        }
+                        let fileManager = FileManager.default
+                        do {
+                            let path = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(SUBTITLE_URL)
+                            try newString.write(to: path, atomically: false, encoding: .utf8)
+                            completed(true)
+                            return
+                        }
+                        catch {
+                            completed(false)
+                            return
+                        }
+                    }
+                    else {
+                        completed(false)
+                    }
+                }
+                else {
+                    completed(false)
+                }
+            }.resume()
+        }
+    }
+    
     func getActorMovie(idMovie: Int, completed: @escaping (Bool, ActorMovie?) -> Void) {
         let url = URL(string: "https://api.themoviedb.org/3/movie/\(idMovie)/credits?api_key=\(API_KEY)&language=en-US")
         var request = URLRequest(url: url!)
