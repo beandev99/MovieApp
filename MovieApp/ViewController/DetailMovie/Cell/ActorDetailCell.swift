@@ -64,6 +64,10 @@ extension ActorDetailCell: UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let vc = DetailActorVC()
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .fullScreen
+        vc.personID = dataActor?.cast[indexPath.row].id
+        UIApplication.getTopViewController()?.present(vc, animated: true, completion: nil)
     }
 }

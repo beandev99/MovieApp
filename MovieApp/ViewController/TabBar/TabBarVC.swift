@@ -12,6 +12,11 @@ class TabBarVC: UIViewController {
     var listVC: [UIViewController] = []
     var numberChildInVC:Int = 0
     @IBOutlet weak var childView: UIView!
+    @IBOutlet weak var btnHome: UIButton!
+    @IBOutlet weak var btnSearch: UIButton!
+    @IBOutlet weak var btnMyList: UIButton!
+    @IBOutlet weak var btnSetting: UIButton!
+    var arrImgUnSelect: [String] = ["ic-home", "ic-search", "ic-folder", "ic-setting"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +45,7 @@ class TabBarVC: UIViewController {
         childView.addSubview(child.view)
         self.addChild(child)
         child.didMove(toParent: self)
+        changeImg()
     }
     
     @IBAction func openHome(_ sender: Any) {
@@ -47,6 +53,7 @@ class TabBarVC: UIViewController {
             loadViewTab(child: listVC[0])
         }
         numberChildInVC = 0
+        changeImg()
     }
     
     @IBAction func openSearch(_ sender: Any) {
@@ -54,6 +61,7 @@ class TabBarVC: UIViewController {
             loadViewTab(child: listVC[1])
         }
         numberChildInVC = 1
+        changeImg()
     }
     
     @IBAction func openFolder(_ sender: Any) {
@@ -61,6 +69,7 @@ class TabBarVC: UIViewController {
             loadViewTab(child: listVC[2])
         }
         numberChildInVC = 2
+        changeImg()
     }
     
     @IBAction func openSetting(_ sender: Any) {
@@ -68,6 +77,23 @@ class TabBarVC: UIViewController {
             loadViewTab(child: listVC[3])
         }
         numberChildInVC = 3
+        changeImg()
+    }
+    
+    func changeImg() {
+        let arrBtn = [btnHome, btnSearch, btnMyList, btnSetting]
+        if numberChildInVC >= arrBtn.count {
+            return
+        }
+        arrBtn[numberChildInVC]?.setImage(UIImage(named: arrImgUnSelect[numberChildInVC]), for: .normal)
+        for (index, value) in arrBtn.enumerated() {
+            if index == numberChildInVC {
+                value?.setImage(UIImage(named: "\(arrImgUnSelect[numberChildInVC])-selected"), for: .normal)
+            }
+            else {
+                value?.setImage(UIImage(named: "\(arrImgUnSelect[index])"), for: .normal)
+            }
+        }
     }
 }
 extension TabBarVC: CategoryDelegate {

@@ -17,9 +17,43 @@ protocol APIHelper {
     func getLinkMovie(idMovie: Int, completed: @escaping (_ isSuccess: Bool, _ data: LinkMovie?)->Void)
     func getActorMovie(idMovie: Int, completed: @escaping (_ isSuccess: Bool, _ data: ActorMovie?)->Void)
     func downloadSub(url: String, completed: @escaping (_ isSuccess: Bool)->Void)
+    func getDetailActor(idActor: Int, completed: @escaping (_ isSuccess: Bool, _ data: DetailActor?)->Void)
+    func search(query: String, page: Int, completed: @escaping (_ isSuccess: Bool, _ data: MovieModel?)->Void)
 }
 
 class APIHelperImp: APIHelper {
+    
+    func search(query: String, page: Int, completed: @escaping (Bool, MovieModel?) -> Void) {
+        var formatQuery = query
+        formatQuery = formatQuery.replacingOccurrences(of: " ", with: "&nbsp")
+        let url = URL(string: "https://api.themoviedb.org/3/search/movie?api_key=\(API_KEY)&language=en-US&query=\(formatQuery)&page=\(page)")
+        var request = URLRequest(url: url!)
+        request.timeoutInterval = 120
+        request.httpMethod = "GET"
+        URLSession.shared.dataTask(with: request) { data, response , error in
+            if error == nil {
+                if let data = data {
+                    do {
+                        let dataSearch = try JSONDecoder().decode(MovieModel.self, from: data)
+                        completed(true, dataSearch)
+                    }
+                    catch {
+                        completed(false, nil)
+                    }
+                }
+            }
+            else {
+                completed(false, nil)
+            }
+        }.resume()
+    }
+    
+
+    func getDetailActor(idActor: Int, completed: @escaping (Bool, DetailActor?) -> Void) {
+        let url = URL(string: "https://api.themoviedb.org/3/person/\(idActor)?api_key=\(API_KEY)&language=en-US")
+        _ = URLRequest(url: url!)
+        
+    }
     
     func downloadSub(url: String, completed: @escaping (Bool) -> Void) {
         let url = URL(string: url)
@@ -49,7 +83,7 @@ class APIHelperImp: APIHelper {
                         }
                         let fileManager = FileManager.default
                         do {
-                            let path = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(SUBTITLE_URL)
+                        let path = try fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(SUBTITLE_URL)
                             try newString.write(to: path, atomically: false, encoding: .utf8)
                             completed(true)
                             return
@@ -74,6 +108,7 @@ class APIHelperImp: APIHelper {
         let url = URL(string: "https://api.themoviedb.org/3/movie/\(idMovie)/credits?api_key=\(API_KEY)&language=en-US")
         var request = URLRequest(url: url!)
         request.httpMethod = "GET"
+        
         request.timeoutInterval = 120
         URLSession.shared.dataTask(with: request) { data, response, err in
             if err == nil {
@@ -172,8 +207,10 @@ class APIHelperImp: APIHelper {
     }
     
     func getImage(pathImg: String, width: WidthImage, completed: @escaping (Bool, UIImage?) -> Void) {
-        let url = URL(string: DEFAULT_URL_IMG+width.rawValue+"/\(pathImg)")
-        UIImageView().sd_setImage(with: url) { img, error, cache, url in
+        let url = URL(string: DEFAULT_URL_IMG+width.rawValue+"\(pathImg)")
+        let imgView = UIImageView()
+        imgView.sd_setImage(with: url) { img, error, cache, url in
+            print("🦁")
             if error == nil {
                 completed(true, img)
             }

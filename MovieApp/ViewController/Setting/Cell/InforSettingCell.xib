@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="InforSettingCell" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="396" height="325"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="396" height="325"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flI-FF-MvB">
+                        <rect key="frame" x="0.0" y="0.0" width="396" height="216.5"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-bg-setting" translatesAutoresizingMaskIntoConstraints="NO" id="syI-Ud-wsZ">
+                                <rect key="frame" x="0.0" y="0.0" width="396" height="216.5"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reus" translatesAutoresizingMaskIntoConstraints="NO" id="ixd-ha-WWg">
+                                <rect key="frame" x="128.5" y="39" width="139" height="138.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ixd-ha-WWg" secondAttribute="height" multiplier="1:1" id="oxv-cI-db1"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1134429052" green="0.1235707179" blue="0.1335714757" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="syI-Ud-wsZ" firstAttribute="top" secondItem="flI-FF-MvB" secondAttribute="top" id="3XQ-Wo-e01"/>
+                            <constraint firstAttribute="trailing" secondItem="syI-Ud-wsZ" secondAttribute="trailing" id="Cw9-A8-082"/>
+                            <constraint firstItem="ixd-ha-WWg" firstAttribute="centerY" secondItem="flI-FF-MvB" secondAttribute="centerY" id="ICQ-U8-vnt"/>
+                            <constraint firstItem="ixd-ha-WWg" firstAttribute="width" secondItem="flI-FF-MvB" secondAttribute="width" multiplier="0.35" id="Pha-ky-RzZ"/>
+                            <constraint firstAttribute="bottom" secondItem="syI-Ud-wsZ" secondAttribute="bottom" id="jBG-HB-mgg"/>
+                            <constraint firstItem="syI-Ud-wsZ" firstAttribute="leading" secondItem="flI-FF-MvB" secondAttribute="leading" id="k4g-i3-jfI"/>
+                            <constraint firstItem="ixd-ha-WWg" firstAttribute="centerX" secondItem="flI-FF-MvB" secondAttribute="centerX" id="zvV-N6-1rl"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftR-73-PRU">
+                        <rect key="frame" x="0.0" y="216.5" width="396" height="108.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, Tuan Dep Trai 🌞" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOV-9Y-uhH">
+                                <rect key="frame" x="10" y="10" width="376" height="54.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="48 times watch movie on Muvi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dX-0N-Edc">
+                                <rect key="frame" x="10" y="64.5" width="376" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.66955167059999998" green="0.66955167059999998" blue="0.67689764500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5AQ-U9-IDz">
+                                <rect key="frame" x="0.0" y="107.5" width="396" height="1"/>
+                                <color key="backgroundColor" red="0.22368210550000001" green="0.2327575982" blue="0.24625229840000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="hzH-qh-giw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16290172929999999" green="0.1724791229" blue="0.18667906519999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WOV-9Y-uhH" firstAttribute="top" secondItem="ftR-73-PRU" secondAttribute="top" constant="10" id="458-tt-GQL"/>
+                            <constraint firstAttribute="trailing" secondItem="WOV-9Y-uhH" secondAttribute="trailing" constant="10" id="7eS-hg-iqn"/>
+                            <constraint firstItem="WOV-9Y-uhH" firstAttribute="height" secondItem="ftR-73-PRU" secondAttribute="height" multiplier="1/2" id="8OS-DN-JGm"/>
+                            <constraint firstAttribute="trailing" secondItem="3dX-0N-Edc" secondAttribute="trailing" constant="10" id="B8U-hF-hTT"/>
+                            <constraint firstItem="3dX-0N-Edc" firstAttribute="top" secondItem="WOV-9Y-uhH" secondAttribute="bottom" id="PPj-r7-EFd"/>
+                            <constraint firstItem="5AQ-U9-IDz" firstAttribute="leading" secondItem="ftR-73-PRU" secondAttribute="leading" id="Tz4-K3-20q"/>
+                            <constraint firstItem="WOV-9Y-uhH" firstAttribute="leading" secondItem="ftR-73-PRU" secondAttribute="leading" constant="10" id="bS8-hU-lXs"/>
+                            <constraint firstAttribute="bottom" secondItem="5AQ-U9-IDz" secondAttribute="bottom" id="kil-Y3-kPM"/>
+                            <constraint firstItem="3dX-0N-Edc" firstAttribute="leading" secondItem="ftR-73-PRU" secondAttribute="leading" constant="10" id="wu7-Fj-l1l"/>
+                            <constraint firstAttribute="trailing" secondItem="5AQ-U9-IDz" secondAttribute="trailing" id="zfA-Q7-M4j"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" red="0.1134429052" green="0.1235707179" blue="0.1335714757" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="flI-FF-MvB" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="2/3" id="MAv-wr-h4W"/>
+                <constraint firstAttribute="bottom" secondItem="ftR-73-PRU" secondAttribute="bottom" id="Pws-e2-MMt"/>
+                <constraint firstAttribute="trailing" secondItem="flI-FF-MvB" secondAttribute="trailing" id="cAt-Vg-f3G"/>
+                <constraint firstItem="ftR-73-PRU" firstAttribute="top" secondItem="flI-FF-MvB" secondAttribute="bottom" id="j8P-BK-Y33"/>
+                <constraint firstItem="flI-FF-MvB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jRX-MH-bJZ"/>
+                <constraint firstItem="flI-FF-MvB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pB5-bn-hqC"/>
+                <constraint firstAttribute="trailing" secondItem="ftR-73-PRU" secondAttribute="trailing" id="xH1-5w-R17"/>
+                <constraint firstItem="ftR-73-PRU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zrF-GE-E5g"/>
+            </constraints>
+            <size key="customSize" width="396" height="325"/>
+            <connections>
+                <outlet property="imgUser" destination="ixd-ha-WWg" id="YfD-xL-SyM"/>
+                <outlet property="viewInfor" destination="ftR-73-PRU" id="zhc-ms-J6V"/>
+            </connections>
+            <point key="canvasLocation" x="153.62318840579712" y="115.51339285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="img-bg-setting" width="375" height="195"/>
+        <image name="reus" width="600" height="450"/>
+    </resources>
+</document>

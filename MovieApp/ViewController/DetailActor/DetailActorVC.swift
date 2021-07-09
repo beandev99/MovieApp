@@ -10,19 +10,27 @@ import UIKit
 class DetailActorVC: UIViewController {
 
     @IBOutlet weak var collectionDetailActor: UICollectionView!
+    let apiHelper = RepositoryServiceLocator.shared.apiHelper
+    var personID: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configData()
         configUI()
-        // Do any additional setup after loading the view.
     }
     
     func configUI() {
 //        collectionDetailActor.delegate = self
 //        collectionDetailActor.dataSource = self
     }
-
-
+    
+    func configData() {
+        guard let personID = personID else {return}
+        apiHelper.getDetailActor(idActor: personID) { isSuccess, dataActor in
+            
+        }
+    }
+    
 }
 //ACTION
 extension DetailActorVC {

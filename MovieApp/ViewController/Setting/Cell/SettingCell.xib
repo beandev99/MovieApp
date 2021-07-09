@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gTV-IL-0wX" customClass="SettingCell" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="361" height="124"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="361" height="124"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yO6-jX-UGD">
+                        <rect key="frame" x="10" y="51" width="21.5" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="yO6-jX-UGD" secondAttribute="height" multiplier="1:1" id="JlG-Cb-PBe"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTu-p7-7Mx">
+                        <rect key="frame" x="41.5" y="10" width="278" height="104"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-chevron-right" translatesAutoresizingMaskIntoConstraints="NO" id="Poh-ZP-s9v">
+                        <rect key="frame" x="329.5" y="51" width="21.5" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Poh-ZP-s9v" secondAttribute="height" multiplier="1:1" id="slm-D9-ZUA"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="LTu-p7-7Mx" secondAttribute="bottom" constant="10" id="4LF-GT-uTo"/>
+                <constraint firstItem="LTu-p7-7Mx" firstAttribute="leading" secondItem="yO6-jX-UGD" secondAttribute="trailing" constant="10" id="7do-Xs-1LO"/>
+                <constraint firstItem="Poh-ZP-s9v" firstAttribute="leading" secondItem="LTu-p7-7Mx" secondAttribute="trailing" constant="10" id="A01-2h-mj1"/>
+                <constraint firstItem="LTu-p7-7Mx" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Nia-lu-mfa"/>
+                <constraint firstItem="Poh-ZP-s9v" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.06" id="Vle-T6-OrC"/>
+                <constraint firstItem="LTu-p7-7Mx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="WLt-3T-5Hb"/>
+                <constraint firstItem="yO6-jX-UGD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="WSa-lg-Rqj"/>
+                <constraint firstItem="yO6-jX-UGD" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.06" id="c0M-Wf-R8I"/>
+                <constraint firstItem="Poh-ZP-s9v" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="i1j-j9-sp8"/>
+                <constraint firstAttribute="trailing" secondItem="Poh-ZP-s9v" secondAttribute="trailing" constant="10" id="k12-cq-bKs"/>
+                <constraint firstItem="yO6-jX-UGD" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="piY-S7-rGh"/>
+            </constraints>
+            <size key="customSize" width="361" height="124"/>
+            <connections>
+                <outlet property="imgSetting" destination="yO6-jX-UGD" id="LPF-tj-MG5"/>
+                <outlet property="lblNameSetting" destination="LTu-p7-7Mx" id="cGC-vV-WgJ"/>
+            </connections>
+            <point key="canvasLocation" x="258.69565217391306" y="121.20535714285714"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic-chevron-right" width="24" height="24"/>
+    </resources>
+</document>

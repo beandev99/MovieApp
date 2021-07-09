@@ -13,8 +13,8 @@ target 'MovieApp' do
   pod 'NVActivityIndicatorView'
   pod 'SDWebImage'
   pod 'youtube-ios-player-helper'
-
   pod 'AVPlayerViewController-Subtitles'
+  pod 'Parchment', '~> 3.0'
 
 
 

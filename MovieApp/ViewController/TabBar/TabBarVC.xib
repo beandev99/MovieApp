@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabBarVC" customModule="MovieApp" customModuleProvider="target">
             <connections>
+                <outlet property="btnHome" destination="cpy-jo-kvc" id="fFy-vx-ddf"/>
+                <outlet property="btnMyList" destination="uHG-QF-6Qv" id="Iiw-6X-E58"/>
+                <outlet property="btnSearch" destination="kKl-HF-KBd" id="jfu-S0-fwy"/>
+                <outlet property="btnSetting" destination="MOq-fH-F3P" id="Zij-mz-fGx"/>
                 <outlet property="childView" destination="928-WG-zBl" id="ZCg-R0-obR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -20,17 +25,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dw2-nh-csC">
-                    <rect key="frame" x="0.0" y="806.5" width="414" height="89.5"/>
+                    <rect key="frame" x="0.0" y="824.5" width="414" height="71.5"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpy-jo-kvc">
-                            <rect key="frame" x="0.0" y="0.0" width="103.5" height="89.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="103.5" height="71.5"/>
                             <state key="normal" image="ic-home"/>
                             <connections>
                                 <action selector="openHome:" destination="-1" eventType="touchUpInside" id="mgH-1c-wMn"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKl-HF-KBd">
-                            <rect key="frame" x="103.5" y="0.0" width="103.5" height="89.5"/>
+                            <rect key="frame" x="103.5" y="0.0" width="103.5" height="71.5"/>
                             <color key="tintColor" systemColor="systemYellowColor"/>
                             <state key="normal" image="ic-search"/>
                             <connections>
@@ -38,14 +43,14 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uHG-QF-6Qv">
-                            <rect key="frame" x="207" y="0.0" width="103.5" height="89.5"/>
+                            <rect key="frame" x="207" y="0.0" width="103.5" height="71.5"/>
                             <state key="normal" image="ic-folder"/>
                             <connections>
                                 <action selector="openFolder:" destination="-1" eventType="touchUpInside" id="JJr-wV-phZ"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MOq-fH-F3P">
-                            <rect key="frame" x="310.5" y="0.0" width="103.5" height="89.5"/>
+                            <rect key="frame" x="310.5" y="0.0" width="103.5" height="71.5"/>
                             <state key="normal" image="ic-setting"/>
                             <connections>
                                 <action selector="openSetting:" destination="-1" eventType="touchUpInside" id="ahD-ko-SRl"/>
@@ -55,7 +60,7 @@
                     <color key="backgroundColor" red="0.12549020350000001" green="0.1294117719" blue="0.13725490870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="928-WG-zBl">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="806.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="824.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
@@ -64,7 +69,7 @@
             <constraints>
                 <constraint firstItem="928-WG-zBl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="93b-Lk-KS3"/>
                 <constraint firstAttribute="trailing" secondItem="dw2-nh-csC" secondAttribute="trailing" id="FU9-hA-Ihy"/>
-                <constraint firstItem="dw2-nh-csC" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.1" id="K5T-vP-p2u"/>
+                <constraint firstItem="dw2-nh-csC" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.08" id="K5T-vP-p2u"/>
                 <constraint firstItem="928-WG-zBl" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ofi-om-03T"/>
                 <constraint firstAttribute="bottom" secondItem="dw2-nh-csC" secondAttribute="bottom" id="RTS-pr-4gV"/>
                 <constraint firstItem="928-WG-zBl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Y84-oQ-Pi1"/>

@@ -21,14 +21,11 @@ class CategoryMovieVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupData()
     }
     
     @IBAction func back(_ sender: Any) {
         delegate?.back()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        setupData()
     }
     
     func setupUI() {
@@ -53,7 +50,7 @@ extension CategoryMovieVC: UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionViewCategory.dequeueReusableCell(withReuseIdentifier: CATEGORY_CELL, for: indexPath) as? CategoryMovieCell {
-            cell.lblName.text = dataMovie?.results[indexPath.row].title
+            cell.lblName.text = dataMovie?.results[indexPath.row].title ?? dataMovie?.results[indexPath.row].title ?? dataMovie?.results[indexPath.row].originalName ?? dataMovie?.results[indexPath.row].originalTitle
             cell.lblDesc.text = dataMovie?.results[indexPath.row].overview
             if let backdropPath = dataMovie?.results[indexPath.row].backdropPath {
                 let url = URL(string: DEFAULT_URL_IMG_500+backdropPath)

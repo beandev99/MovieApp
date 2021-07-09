@@ -190,7 +190,7 @@ extension DetailMovieVC: UICollectionViewDelegate, UICollectionViewDataSource, U
         case 0:
             heightCell = collectionDetail.frame.height/3
         case 1:
-            heightCell = collectionDetail.frame.height/4
+            heightCell = collectionDetail.frame.height/4.5
         case 2:
             if let dataMovie = dataMovie {
                 if let overView = dataMovie.overview {

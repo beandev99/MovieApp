@@ -116,6 +116,7 @@ PODS:
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
+  - Parchment (3.0.1)
   - PromisesObjC (1.2.12)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
@@ -129,6 +130,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - GoogleSignIn
   - NVActivityIndicatorView
+  - Parchment (~> 3.0)
   - SDWebImage
   - youtube-ios-player-helper
 
@@ -153,6 +155,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - nanopb
     - NVActivityIndicatorView
+    - Parchment
     - PromisesObjC
     - SDWebImage
     - youtube-ios-player-helper
@@ -177,10 +180,11 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 36689134877faeb055b27dfa4ccc9ceaa42e029e
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
+  Parchment: 466a1cfb6151780db8acb4bbedc2d9c6bfa1e2ff
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   youtube-ios-player-helper: 0185c57db23c80d63d6ca11251d110abb8a4ca61
 
-PODFILE CHECKSUM: f2acc7ca533026649a6f6bf9697ea91a963d606b
+PODFILE CHECKSUM: 7ab8cbceb34cef3664338937e07ba1a814b1e083
 
 COCOAPODS: 1.10.1
