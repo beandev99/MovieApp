@@ -14,7 +14,7 @@ target 'MovieApp' do
   pod 'SDWebImage'
   pod 'youtube-ios-player-helper'
   pod 'AVPlayerViewController-Subtitles'
-  pod 'Parchment', '~> 3.0'
+  pod "PagingKit"
 
 
 

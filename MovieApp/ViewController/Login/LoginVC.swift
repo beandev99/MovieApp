@@ -102,7 +102,7 @@ class LoginVC: UIViewController {
     @IBAction func facebookLogin(_ sender: Any) {
         let loginManager = LoginManager()
         loginManager.logIn(permissions: ["public_profile", "email"], from: self) { result, error in
-            if let error = error {
+            if error == nil {
                 print("failed to login fb")
                 return
             }
@@ -116,10 +116,18 @@ class LoginVC: UIViewController {
                     print("login error: \(error.localizedDescription)")
                 }
                 else {
+                    self.openTabBarVC()
                     print("login success")
                 }
             }
         }
+    }
+    
+    func openTabBarVC() {
+        let vc = TabBarVC()
+        vc.modalTransitionStyle = .coverVertical
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func login(_ sender: Any) {
@@ -133,6 +141,8 @@ class LoginVC: UIViewController {
                 if isSuccess {
                     let alert = UIAlertController(title: "Success", message: "Login success", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { action in
+                        SettingApp.shared.isLogin = true
+                        self.openTabBarVC()
                     }))
                     present(alert, animated: true, completion: nil)
                 }

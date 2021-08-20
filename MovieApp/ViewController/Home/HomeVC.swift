@@ -101,8 +101,8 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
             if let cell = collectionHome.dequeueReusableCell(withReuseIdentifier: NOWPLAYING_CELL, for: indexPath) as? NowPlayingCell {
                 cell.delegate = self
                 cell.index = indexPath.row
-                if let dataMovieNowPlaying = dataMovieNowPlaying {
-                    cell.dataNowPlaying = dataMovieUpComming
+                if dataMovieNowPlaying != nil {
+                    cell.dataNowPlaying = dataMovieNowPlaying
                     cell.collectionNowPlaying.reloadData()
                 }
                 return cell

@@ -27,7 +27,8 @@ class TabBarVC: UIViewController {
     func setupVC() {
         let homeVC = HomeVC()
         let searchVC = SearchVC()
-        let folderVC = FolderVC()
+        let storyboad = UIStoryboard(name: "Main", bundle: nil)
+        let folderVC = storyboad.instantiateViewController(identifier: "folder")
         let settingVC = SettingVC()
         let categoryVC = CategoryMovieVC()
         homeVC.delegate = self

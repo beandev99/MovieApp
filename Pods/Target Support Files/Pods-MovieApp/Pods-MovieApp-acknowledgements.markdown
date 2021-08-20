@@ -2411,11 +2411,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-## Parchment
+## PagingKit
 
-The MIT License (MIT)
+MIT License
 
-Copyright (c) 2016 Martin Rechsteiner
+Copyright (c) 2017 Kazuhiro Hayashi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

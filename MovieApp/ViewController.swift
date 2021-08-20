@@ -17,9 +17,16 @@ class ViewController: UIViewController {
     }
     
     @objc func openVC() {
-        let vc = TabBarVC()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true, completion: nil)
+        if SettingApp.shared.isLogin {
+            let vc = TabBarVC()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        }
+        else {
+            let vc = LoginVC()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        }
     }
 }
 
